@@ -19,7 +19,19 @@
         formaction="/users/{{ user.id }}/delete"
         formmethod="POST">Delete</button>
       </form>
+    
+      <div class="posts">
+        <h2 class="mt-5">Posts</h2>
+        <ul>
+          {% for post in user.posts %}
+          <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <a href="/users/{{ user.id }}/posts/new"><button class="btn btn-primary btn-sm mt-5">Add Post</button></a>
+      </div>
 
+      
     </div>
   </div>
+
 {% endblock %}
