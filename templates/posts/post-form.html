@@ -6,7 +6,7 @@
 
 <h1>Add Post for {{ user.full_name }}</h1>
 
-<form method="POST">
+<form>
   <div class="container">
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
@@ -16,9 +16,21 @@
       <label for="content" class="form-label">Content</label>
       <textarea class="form-control" id="content" rows="3" name="content"></textarea>
     </div>
-    <a href="/users/{{ user.id }}"><button class="btn btn-danger">Cancel</button></a>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button class="btn btn-danger"
+    formaction="/users/{{ user.id }}"
+    formmethod="GET">Cancel</button>
+    <button class="btn btn-primary"
+    formmethod="POST">Add</button>
   </div>    
 </form>
 
+<!-- Render checkbox buttons with tags as selections -->
+<div class="mt-3 form-group row form-check">
+{% for tag in tags %}
+  <div>
+    <input type="checkbox" value="{{ tag.name }}" name="tag">
+    <label for="tag">{{ tag.name }}</label>
+  </div>
+{% endfor %}
+</div>
 {% endblock %}

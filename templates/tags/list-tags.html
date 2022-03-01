@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block tile %}Tags{% endblock %}
+
+{% block content %}
+
+<h1>Tags</h1>
+
+<ul>
+  {% for tag in all_tags %}
+  <li><a href="/tags/{{ tag.id }}">{{ tag.name }}</a></li>
+  {% endfor %}
+</ul>
+
+<form>
+  <button class="btn btn-primary"
+  formaction="/tags/new">Add Tag</button>
+</form>
+
+{% endblock %}

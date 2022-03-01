@@ -1,5 +1,9 @@
 body {
-  /* margin: 50px; */
+  margin: 15px;
+}
+
+.navbar {
+  margin: 0;
 }
 
 li a {
@@ -17,4 +21,16 @@ li a {
 
 .edit-profile {
   margin-left: 50px;
+}
+
+#tag-input {
+  width: 250px;
+}
+
+.tag-container {
+  display: flex;
+}
+
+.tag {
+  list-style-type: none;
 }

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block tile %}Tags{% endblock %}
+
+{% block content %}
+
+<h1>{{ show_tag.name }}</h1>
+<ul>
+  {% for post in show_tag.posts %}
+  <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<form>
+  <button class="btn btn-primary"
+  formaction="/tags/{{ show_tag.id }}/edit"
+  formmethod="GET">Edit</button>
+  <button class="btn btn-danger"
+  formaction="/tags/{{ show_tag.id }}/delete"
+  formmethod="POST">Delete</button>
+</form>
+
+{% endblock %}
